@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:m="http://ant.apache.org/ivy/maven">
+  <info organisation="pentaho-kettle" module="pdi-mysql-plugin" revision="TRUNK-SNAPSHOT" status="integration" publication="20130228104210"/>
+
+  <configurations>
+    <conf name="default"/>
+    <conf name="dev"/>
+    <conf name="test" extends="default" visibility="private"/>
+    <conf name="source"/>
+  </configurations>
+
+  <publications>
+    <artifact name="pdi-mysql-plugin" type="jar" conf="default"/>
+  </publications>
+
+  <dependencies defaultconf="default->default">
+    <dependency org="pentaho-kettle" name="kettle-core" rev="TRUNK-SNAPSHOT" conf="dev->default" changing="true"/>
+    <dependency org="mysql" name="mysql-connector-java" rev="5.1.23"/>
+    <dependency org="junit" name="junit" rev="4.7" conf="test->default"/>     
+  </dependencies>
+</ivy-module>
